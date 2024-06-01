@@ -80,16 +80,16 @@ namespace ManyToManyRelation.Controllers
                 return NotFound();
             }
 
-            var studentCourse = await _context.StudentCourses
-    .Include(sc => sc.Course)
-    .Include(sc => sc.Student)
-    .FirstOrDefaultAsync(sc => sc.StudentId == id && sc.CourseId == id);
+            var studentCourse = await _context.StudentCourses.FindAsync(id);
+    //.Include(sc => sc.Course)
+    //.Include(sc => sc.Student)
+    //.FirstOrDefaultAsync(sc => sc.StudentId == id && sc.CourseId == id);
             if (studentCourse == null)
             {
                 return NotFound();
             }
-            ViewBag.CourseId = new SelectList(_context.Courses, "CourseId", "CourseName", studentCourse.Course.CourseId);
-            ViewBag.StudentId = new SelectList(_context.Students, "StudentId", "Name", studentCourse.Student.StudentId);
+            ViewBag.CourseId = new SelectList(_context.Courses, "CourseId", "CourseName", studentCourse.CourseId);
+            ViewBag.StudentId = new SelectList(_context.Students, "StudentId", "Name", studentCourse.StudentId);
 
             //ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseName");
             //ViewData["StudentId"] = new SelectList(_context.Students, "StudentId", "Name");
@@ -102,7 +102,7 @@ namespace ManyToManyRelation.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Note")] StudentCourse studentCourse)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,StudentId,CourseId,Note")] StudentCourse studentCourse)
         {
             if (id != studentCourse.Id)
             {
@@ -145,7 +145,7 @@ namespace ManyToManyRelation.Controllers
             var studentCourse = await _context.StudentCourses
                 .Include(s => s.Course)
                 .Include(s => s.Student)
-                .FirstOrDefaultAsync(m => m.StudentId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (studentCourse == null)
             {
                 return NotFound();
