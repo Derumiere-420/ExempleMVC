@@ -10,9 +10,9 @@ $.validator.addMethod("custompassword", function (value, element) {
         return false; // Ne pas valider si le champ est vide
     }
 
-    var hasUpperCase = /[A-Z]/.test(value);
-    var hasLowerCase = /[a-z]/.test(value);
-    var hasDigit = /[0-9]/.test(value);
+    let hasUpperCase = /[A-Z]/.test(value);
+    let hasLowerCase = /[a-z]/.test(value);
+    let hasDigit = /[0-9]/.test(value);
 
     return hasUpperCase && hasLowerCase && hasDigit;
 });
