@@ -5,6 +5,10 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManyToManyRelation", "ManyToManyRelation\ManyToManyRelation.csproj", "{7B548016-25A8-4B6A-9651-59104FC210FF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomUnobtrusiveDataValidator", "CustomUnobtrusiveDataValidator\CustomUnobtrusiveDataValidator.csproj", "{2291CE46-385E-4209-B408-29DD028E97F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionRadio", "DependencyInjectionRadio\DependencyInjectionRadio.csproj", "{50CAB16F-E344-4CCF-9970-8685ED64A01A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7B548016-25A8-4B6A-9651-59104FC210FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B548016-25A8-4B6A-9651-59104FC210FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B548016-25A8-4B6A-9651-59104FC210FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2291CE46-385E-4209-B408-29DD028E97F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2291CE46-385E-4209-B408-29DD028E97F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2291CE46-385E-4209-B408-29DD028E97F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2291CE46-385E-4209-B408-29DD028E97F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CAB16F-E344-4CCF-9970-8685ED64A01A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CAB16F-E344-4CCF-9970-8685ED64A01A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CAB16F-E344-4CCF-9970-8685ED64A01A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CAB16F-E344-4CCF-9970-8685ED64A01A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
