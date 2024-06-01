@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ajax</title>
+  </head>
+  <body>
+    <button onclick="setTimeout(greet, 2000),sayName('John')">
+      No callback function
+    </button>
+    <div id="feed"></div>
+
+    <script>
+      // No Callback Function Example
+      function greet() {
+        console.log("Hello world");
+      }
+      //cette fonction sera exécuter avant la fonction greet car JavaScript ne bloque pas le code.
+      function sayName(name) {
+        console.log("Hello" + " " + name);
+      }
+    </script>
+  </body>
+</html>

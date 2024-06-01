@@ -1,0 +1,1 @@
+# Exemple de code JavaScript qui porte sur les calls back, les promises et async. Aussi la méthode fetch y est présentée.

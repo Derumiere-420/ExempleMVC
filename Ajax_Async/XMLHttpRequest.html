@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ajax</title>
+  </head>
+  <body>
+    <button onclick="showCountries()">Show Countries</button>
+    <div id="feed"></div>
+
+    <script>
+      function showCountries() {
+        let xhr = new XMLHttpRequest();
+
+        //connection au web service
+        xhr.open("GET", "https://restcountries.com/v3.1/all", true);
+
+        //sur le chargement si la connection a réussie, statut 200 = OK.
+        xhr.onload = function () {
+          if (xhr.status == 200) {
+            console.log("Success");
+            //parse la réponse en json
+            let countries = JSON.parse(this.response);
+            console.log(countries);
+            //ce code sert à l'affichage HTML
+            countries.forEach((country) => {
+              const countryCard = document.createElement("div");
+              const countryCardImage = document.createElement("img");
+              countryCard.innerHTML = country.name.common;
+              countryCardImage.src = country.flags.png;
+              countryCard.appendChild(countryCardImage);
+              document.getElementById("feed").appendChild(countryCard);
+            });
+          }
+        };
+
+        xhr.send();
+      }
+    </script>
+  </body>
+</html>

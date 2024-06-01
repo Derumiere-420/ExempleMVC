@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ajax</title>
+  </head>
+  <body>
+    <button onclick="showCountries()">Show Countries</button>
+    <div id="feed"></div>
+
+    <script>
+      //Promises
+      /*function showCountries() {
+        fetch("https://restcountries.com/v3.1/all")
+          .then(function (response) {
+            return response.ok ? response.json() : console.log("erreur");
+          })
+          .then(function (data) {
+            data.forEach(function (country) {
+              const countryCard = document.createElement("div");
+              const countryCardImage = document.createElement("img");
+              countryCard.innerHTML = country.name.common;
+              countryCardImage.src = country.flags.png;
+              countryCard.appendChild(countryCardImage);
+              document.getElementById("feed").appendChild(countryCard);
+            });
+          });
+      }*/
+
+      //Promises, with fat arrow
+      /*function showCountries() {
+        fetch("https://restcountries.com/v3.1/all")
+          .then((response) => {
+            return response.ok ? response.json() : console.log("erreur");
+          })
+          .then((data) => {
+            data.forEach((country) => {
+              const countryCard = document.createElement("div");
+              const countryCardImage = document.createElement("img");
+              countryCard.innerHTML = country.name.common;
+              countryCardImage.src = country.flags.png;
+              countryCard.appendChild(countryCardImage);
+              document.getElementById("feed").appendChild(countryCard);
+            });
+          });
+      }*/
+
+      //Async Await
+      /*async function showCountries(){
+            let response = await fetch('https://restcountries.com/v3.1/all');
+                if (response.ok) { 
+                        let json = await response.json();
+                        console.log("Success");
+                        console.log(json);
+                        json.forEach(country => {
+                            const countryCard = document.createElement('div');
+                            const countryCardImage = document.createElement('img');
+                            countryCard.innerHTML = country.name.common;
+                            countryCardImage.src = country.flags.png;
+                            countryCard.appendChild(countryCardImage);
+                            document.getElementById('feed').appendChild(countryCard);
+                        });
+                    } 
+                    
+                }*/
+    </script>
+  </body>
+</html>
