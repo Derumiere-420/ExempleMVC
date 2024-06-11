@@ -24,17 +24,17 @@ namespace OneToMany.Migrations
 
             modelBuilder.Entity("OneToMany.Models.Grades", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("GradeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GradeId"), 1L, 1);
 
-                    b.Property<string>("Name")
+                    b.Property<string>("GradeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("GradeId");
 
                     b.ToTable("Grades");
 
@@ -73,20 +73,20 @@ namespace OneToMany.Migrations
 
             modelBuilder.Entity("OneToMany.Models.Students", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("GradeId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GradeId"), 1L, 1);
 
                     b.Property<int>("GradeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("GradeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("GradeId");
 
                     b.HasIndex("GradeId");
 

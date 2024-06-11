@@ -37,7 +37,7 @@ namespace OneToMany.Migrations
                         name: "FK_Student_Grade_GradeId",
                         column: x => x.GradeId,
                         principalTable: "Grades",
-                        principalColumn: "Id",
+                        principalColumn: "GradeId",
                         onDelete: ReferentialAction.Cascade);
                 });
 

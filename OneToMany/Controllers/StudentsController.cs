@@ -35,7 +35,7 @@ namespace OneToMany.Controllers
 
             var student = await _context.Students
                 .Include(s => s.Grade)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.StudentId == id);
             if (student == null)
             {
                 return NotFound();
@@ -47,7 +47,7 @@ namespace OneToMany.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
-            ViewData["GradeId"] = new SelectList(_context.Set<Grade>(), "Id", "Name");
+            ViewData["GradeId"] = new SelectList(_context.Set<Grade>(), "GradeId", "GradeName");
             return View();
         }
 
@@ -56,7 +56,7 @@ namespace OneToMany.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,GradeId")] Student student)
+        public async Task<IActionResult> Create([Bind("GradeId,GradeName,GradeId")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace OneToMany.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GradeId"] = new SelectList(_context.Set<Grade>(), "Id", "Name", student.GradeId);
+            ViewData["GradeId"] = new SelectList(_context.Set<Grade>(), "GradeId", "GradeName", student.GradeId);
             return View(student);
         }
 
@@ -81,7 +81,7 @@ namespace OneToMany.Controllers
             {
                 return NotFound();
             }
-            ViewData["GradeId"] = new SelectList(_context.Set<Grade>(), "Id", "Name", student.GradeId);
+            ViewData["GradeId"] = new SelectList(_context.Set<Grade>(), "GradeId", "GradeName", student.GradeId);
             return View(student);
         }
 
@@ -90,9 +90,9 @@ namespace OneToMany.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,GradeId")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("GradeId,GradeName,GradeId")] Student student)
         {
-            if (id != student.Id)
+            if (id != student.StudentId)
             {
                 return NotFound();
             }
@@ -106,7 +106,7 @@ namespace OneToMany.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!StudentExists(student.Id))
+                    if (!StudentExists(student.StudentId))
                     {
                         return NotFound();
                     }
@@ -117,7 +117,7 @@ namespace OneToMany.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GradeId"] = new SelectList(_context.Set<Grade>(), "Id", "Name", student.GradeId);
+            ViewData["GradeId"] = new SelectList(_context.Set<Grade>(), "GradeId", "GradeName", student.GradeId);
             return View(student);
         }
 
@@ -131,7 +131,7 @@ namespace OneToMany.Controllers
 
             var student = await _context.Students
                 .Include(s => s.Grade)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.StudentId == id);
             if (student == null)
             {
                 return NotFound();
@@ -161,7 +161,7 @@ namespace OneToMany.Controllers
 
         private bool StudentExists(int id)
         {
-          return (_context.Students?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Students?.Any(e => e.StudentId == id)).GetValueOrDefault();
         }
     }
 }

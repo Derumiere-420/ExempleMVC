@@ -15,12 +15,12 @@ public class MyDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Grade>().HasData(
-            new Grade { Id = 1, Name = "1er Année" },
-            new Grade { Id = 2, Name = "2ème Année" },
-            new Grade { Id = 3, Name = "3ème Année" },
-            new Grade { Id = 4, Name = "4ème Année" },
-            new Grade { Id = 5, Name = "5ème Année" },
-            new Grade { Id = 6, Name = "6ème Année" }
+            new Grade { GradeId = 1, GradeName = "1er Année" },
+            new Grade { GradeId = 2, GradeName = "2ème Année" },
+            new Grade { GradeId = 3, GradeName = "3ème Année" },
+            new Grade { GradeId = 4, GradeName = "4ème Année" },
+            new Grade { GradeId = 5, GradeName = "5ème Année" },
+            new Grade { GradeId = 6, GradeName = "6ème Année" }
         );
     }
 }

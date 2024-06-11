@@ -35,7 +35,7 @@ namespace OneToMany.Controllers
             }
 
             var grade = await _context.Grades
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.GradeId == id);
             if (grade == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace OneToMany.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Grade grade)
+        public async Task<IActionResult> Create([Bind("GradeId,GradeName")] Grade grade)
         {
             if (ModelState.IsValid)
             {
@@ -87,9 +87,9 @@ namespace OneToMany.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Grade grade)
+        public async Task<IActionResult> Edit(int id, [Bind("GradeId,GradeName")] Grade grade)
         {
-            if (id != grade.Id)
+            if (id != grade.GradeId)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace OneToMany.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GradeExists(grade.Id))
+                    if (!GradeExists(grade.GradeId))
                     {
                         return NotFound();
                     }
@@ -126,7 +126,7 @@ namespace OneToMany.Controllers
             }
 
             var grade = await _context.Grades
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.GradeId == id);
             if (grade == null)
             {
                 return NotFound();
@@ -156,7 +156,7 @@ namespace OneToMany.Controllers
 
         private bool GradeExists(int id)
         {
-          return (_context.Grades?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Grades?.Any(e => e.GradeId == id)).GetValueOrDefault();
         }
     }
 }

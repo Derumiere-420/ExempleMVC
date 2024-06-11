@@ -10,7 +10,7 @@ namespace OneToMany.Migrations
         {
             migrationBuilder.InsertData(
                 table: "Grades",
-                columns: new[] { "Id", "Name" },
+                columns: new[] { "GradeId", "GradeName" },
                 values: new object[,]
                 {
                     { 1, "1er Année" },
@@ -26,32 +26,32 @@ namespace OneToMany.Migrations
         {
             migrationBuilder.DeleteData(
                 table: "Grades",
-                keyColumn: "Id",
+                keyColumn: "GradeId",
                 keyValue: 1);
 
             migrationBuilder.DeleteData(
                 table: "Grades",
-                keyColumn: "Id",
+                keyColumn: "GradeId",
                 keyValue: 2);
 
             migrationBuilder.DeleteData(
                 table: "Grades",
-                keyColumn: "Id",
+                keyColumn: "GradeId",
                 keyValue: 3);
 
             migrationBuilder.DeleteData(
                 table: "Grades",
-                keyColumn: "Id",
+                keyColumn: "GradeId",
                 keyValue: 4);
 
             migrationBuilder.DeleteData(
                 table: "Grades",
-                keyColumn: "Id",
+                keyColumn: "GradeId",
                 keyValue: 5);
 
             migrationBuilder.DeleteData(
                 table: "Grades",
-                keyColumn: "Id",
+                keyColumn: "GradeId",
                 keyValue: 6);
         }
     }
