@@ -56,7 +56,7 @@ namespace OneToMany.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GradeId,GradeName,GradeId")] Student student)
+        public async Task<IActionResult> Create([Bind("StudentId,StudentName,GradeId")] Student student)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace OneToMany.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GradeId,GradeName,GradeId")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("StudentId,StudentName,GradeId")] Student student)
         {
             if (id != student.StudentId)
             {
