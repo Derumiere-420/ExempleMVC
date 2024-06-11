@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace OneToMany.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20240611115801_init")]
+    [Migration("20240611122617_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace OneToMany.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("OneToMany.Models.Grades", b =>
+            modelBuilder.Entity("OneToMany.Models.Grade", b =>
                 {
                     b.Property<int>("GradeId")
                         .ValueGeneratedOnAdd()
@@ -37,39 +37,71 @@ namespace OneToMany.Migrations
                     b.HasKey("GradeId");
 
                     b.ToTable("Grades");
+
+                    b.HasData(
+                        new
+                        {
+                            GradeId = 1,
+                            GradeName = "1er Année"
+                        },
+                        new
+                        {
+                            GradeId = 2,
+                            GradeName = "2ème Année"
+                        },
+                        new
+                        {
+                            GradeId = 3,
+                            GradeName = "3ème Année"
+                        },
+                        new
+                        {
+                            GradeId = 4,
+                            GradeName = "4ème Année"
+                        },
+                        new
+                        {
+                            GradeId = 5,
+                            GradeName = "5ème Année"
+                        },
+                        new
+                        {
+                            GradeId = 6,
+                            GradeName = "6ème Année"
+                        });
                 });
 
-            modelBuilder.Entity("OneToMany.Models.Students", b =>
+            modelBuilder.Entity("OneToMany.Models.Student", b =>
                 {
-                    b.Property<int>("GradeId")
+                    b.Property<int>("StudentId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GradeId"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentId"), 1L, 1);
 
                     b.Property<int>("GradeId")
                         .HasColumnType("int");
 
-                    b.Property<string>("GradeName")
+                    b.Property<string>("StudentName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("GradeId");
+                    b.HasKey("StudentId");
 
                     b.HasIndex("GradeId");
 
                     b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("OneToMany.Models.Students", b =>
+            modelBuilder.Entity("OneToMany.Models.Student", b =>
                 {
-                    b.HasOne("OneToMany.Models.Grades", "Grades")
+                    b.HasOne("OneToMany.Models.Grade", "Grade")
                         .WithMany()
                         .HasForeignKey("GradeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Grades");
+                    b.Navigation("Grade");
                 });
 #pragma warning restore 612, 618
         }
