@@ -21,20 +21,20 @@ namespace OneToMany.Controllers
         // GET: Grades
         public async Task<IActionResult> Index()
         {
-              return _context.Grade != null ? 
-                          View(await _context.Grade.ToListAsync()) :
-                          Problem("Entity set 'MyDbContext.Grade'  is null.");
+              return _context.Grades != null ? 
+                          View(await _context.Grades.ToListAsync()) :
+                          Problem("Entity set 'MyDbContext.Grades'  is null.");
         }
 
         // GET: Grades/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Grade == null)
+            if (id == null || _context.Grades == null)
             {
                 return NotFound();
             }
 
-            var grade = await _context.Grade
+            var grade = await _context.Grades
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (grade == null)
             {
@@ -69,12 +69,12 @@ namespace OneToMany.Controllers
         // GET: Grades/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Grade == null)
+            if (id == null || _context.Grades == null)
             {
                 return NotFound();
             }
 
-            var grade = await _context.Grade.FindAsync(id);
+            var grade = await _context.Grades.FindAsync(id);
             if (grade == null)
             {
                 return NotFound();
@@ -120,12 +120,12 @@ namespace OneToMany.Controllers
         // GET: Grades/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Grade == null)
+            if (id == null || _context.Grades == null)
             {
                 return NotFound();
             }
 
-            var grade = await _context.Grade
+            var grade = await _context.Grades
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (grade == null)
             {
@@ -140,14 +140,14 @@ namespace OneToMany.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Grade == null)
+            if (_context.Grades == null)
             {
-                return Problem("Entity set 'MyDbContext.Grade'  is null.");
+                return Problem("Entity set 'MyDbContext.Grades'  is null.");
             }
-            var grade = await _context.Grade.FindAsync(id);
+            var grade = await _context.Grades.FindAsync(id);
             if (grade != null)
             {
-                _context.Grade.Remove(grade);
+                _context.Grades.Remove(grade);
             }
             
             await _context.SaveChangesAsync();
@@ -156,7 +156,7 @@ namespace OneToMany.Controllers
 
         private bool GradeExists(int id)
         {
-          return (_context.Grade?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Grades?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

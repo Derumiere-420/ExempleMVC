@@ -8,9 +8,9 @@ public class MyDbContext : DbContext
         {
         }
 
-        public DbSet<Student> Student { get; set; } = default!;
+        public DbSet<Student> Students { get; set; } = default!;
 
-        public DbSet<Grade>? Grade { get; set; }
+        public DbSet<Grade>? Grades { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

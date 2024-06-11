@@ -9,7 +9,7 @@ namespace OneToMany.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.InsertData(
-                table: "Grade",
+                table: "Grades",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
@@ -25,32 +25,32 @@ namespace OneToMany.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DeleteData(
-                table: "Grade",
+                table: "Grades",
                 keyColumn: "Id",
                 keyValue: 1);
 
             migrationBuilder.DeleteData(
-                table: "Grade",
+                table: "Grades",
                 keyColumn: "Id",
                 keyValue: 2);
 
             migrationBuilder.DeleteData(
-                table: "Grade",
+                table: "Grades",
                 keyColumn: "Id",
                 keyValue: 3);
 
             migrationBuilder.DeleteData(
-                table: "Grade",
+                table: "Grades",
                 keyColumn: "Id",
                 keyValue: 4);
 
             migrationBuilder.DeleteData(
-                table: "Grade",
+                table: "Grades",
                 keyColumn: "Id",
                 keyValue: 5);
 
             migrationBuilder.DeleteData(
-                table: "Grade",
+                table: "Grades",
                 keyColumn: "Id",
                 keyValue: 6);
         }

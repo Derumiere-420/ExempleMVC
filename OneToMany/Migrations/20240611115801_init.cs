@@ -9,7 +9,7 @@ namespace OneToMany.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Grade",
+                name: "Grades",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -22,7 +22,7 @@ namespace OneToMany.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Student",
+                name: "Students",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -36,24 +36,24 @@ namespace OneToMany.Migrations
                     table.ForeignKey(
                         name: "FK_Student_Grade_GradeId",
                         column: x => x.GradeId,
-                        principalTable: "Grade",
+                        principalTable: "Grades",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Student_GradeId",
-                table: "Student",
+                table: "Students",
                 column: "GradeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Student");
+                name: "Students");
 
             migrationBuilder.DropTable(
-                name: "Grade");
+                name: "Grades");
         }
     }
 }

@@ -22,7 +22,7 @@ namespace OneToMany.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("OneToMany.Models.Grade", b =>
+            modelBuilder.Entity("OneToMany.Models.Grades", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace OneToMany.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Grade");
+                    b.ToTable("Grades");
 
                     b.HasData(
                         new
@@ -71,7 +71,7 @@ namespace OneToMany.Migrations
                         });
                 });
 
-            modelBuilder.Entity("OneToMany.Models.Student", b =>
+            modelBuilder.Entity("OneToMany.Models.Students", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -90,18 +90,18 @@ namespace OneToMany.Migrations
 
                     b.HasIndex("GradeId");
 
-                    b.ToTable("Student");
+                    b.ToTable("Students");
                 });
 
-            modelBuilder.Entity("OneToMany.Models.Student", b =>
+            modelBuilder.Entity("OneToMany.Models.Students", b =>
                 {
-                    b.HasOne("OneToMany.Models.Grade", "Grade")
+                    b.HasOne("OneToMany.Models.Grades", "Grades")
                         .WithMany()
                         .HasForeignKey("GradeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Grade");
+                    b.Navigation("Grades");
                 });
 #pragma warning restore 612, 618
         }
