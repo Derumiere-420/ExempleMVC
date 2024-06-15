@@ -1,61 +1,51 @@
-﻿<!DOCTYPE html>
+﻿@model List<ExempleDependencyInjectionRadio.Models.Radio>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radio List</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        h1 {
-            color: #333;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f8f8f8;
-            color: #333;
-        }
-
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+    <link rel="stylesheet" href="~/css/styles.css" />
 </head>
 <body>
     <h1>List of Radios</h1>
     <table>
         <thead>
             <tr>
-                <th>Battery Type</th>
-            </tr>
+                <th>Marque du radio</th>
+                <th>Actions</th>
         </thead>
         <tbody>
             @foreach (var radio in Model)
             {
                 <tr>
-                    <td>@radio.TurnOn()</td>
+                    <td>@radio.RadioName</td>
+                    <td>
+                        @if (radio.isRadioOn)
+                        {
+                            <form action="/Home/PowerOff" method="post">
+                                <input type="hidden" name="RadioName" value="@radio.RadioName" />
+                                <button type="submit">Power Off</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <form action="/Home/PowerOn" method="post">
+                                <input type="hidden" name="RadioName" value="@radio.RadioName" />
+                                <button type="submit">Power On</button>
+                            </form>
+                        }
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
+    @if (TempData["PopupMessage"] != null)
+    {
+        <div class="popup-message">
+            @TempData["PopupMessage"]
+        </div>
+    }
 </body>
 </html>

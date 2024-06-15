@@ -6,12 +6,12 @@ namespace ExempleDependencyInjectionRadio.Services.Implementations
     {
         public string PowerOn()
         {
-           return("Alkaline Battery is powering on the device.");
+           return("Alkaline Battery is powering on.");
         }
 
         public string PowerOff()
         {
-            return("Alkaline Battery is powering off the device.");
+            return("Alkaline Battery is powering off.");
         }
     }
 

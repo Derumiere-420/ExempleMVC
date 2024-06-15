@@ -6,12 +6,12 @@ namespace ExempleDependencyInjectionRadio.Services.Implementations
     {
         public string PowerOn()
         {
-            return("Nickel-Cadmium Battery is powering on the device.");
+            return("Nickel-Cadmium Battery is powering on.");
         }
 
         public string PowerOff()
         {
-            return("Nickel-Cadmium Battery is powering off the device.");
+            return("Nickel-Cadmium Battery is powering off.");
         }
     }
 

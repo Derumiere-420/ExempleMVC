@@ -6,22 +6,31 @@ namespace ExempleDependencyInjectionRadio.Factories
     public class BatteryFactory : IBatteryFactory
     {
         private readonly IServiceProvider _serviceProvider;
-       
+
         public BatteryFactory(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
-           
+
         }
 
         public IBattery CreateBattery(string type)
         {
-            IBattery battery = type switch
+            IBattery battery;
+            switch (type)
             {
-                "Lithium" => _serviceProvider.GetRequiredService<LithiumBattery>(),
-                "NickelCadmium" => _serviceProvider.GetRequiredService<NickelCadmiumBattery>(),
-                "Alkaline" => _serviceProvider.GetRequiredService<AlkalineBattery>(),
-                _ => _serviceProvider.GetRequiredService<LithiumBattery>(),
-            };
+                case "LithiumBattery":
+                    battery = _serviceProvider.GetRequiredService<LithiumBattery>();
+                    break;
+                case "NickelCadmiumBattery":
+                    battery = _serviceProvider.GetRequiredService<NickelCadmiumBattery>();
+                    break;
+                case "AlkalineBattery":
+                    battery = _serviceProvider.GetRequiredService<AlkalineBattery>();
+                    break;
+                default:
+                    battery = _serviceProvider.GetRequiredService<LithiumBattery>();
+                    break;
+            }
 
             return battery;
         }
