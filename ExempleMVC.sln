@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomUnobtrusiveDataValida
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionRadio", "DependencyInjectionRadio\DependencyInjectionRadio.csproj", "{50CAB16F-E344-4CCF-9970-8685ED64A01A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrazyBooks", "S01_Demo_CrazyBooks\CrazyBooks.csproj", "{DE488B3B-64B7-4034-A29E-5EA3BDF6002E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveToJsonFile", "S01_Demo_CrazyBooks\SaveToJsonFile.csproj", "{DE488B3B-64B7-4034-A29E-5EA3BDF6002E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneToMany", "OneToMany\OneToMany.csproj", "{2A3991BD-7F6B-4AA3-8AA6-4E7D81D080B2}"
 EndProject
