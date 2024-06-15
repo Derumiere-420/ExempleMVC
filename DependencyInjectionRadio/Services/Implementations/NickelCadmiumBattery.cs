@@ -4,14 +4,14 @@ namespace ExempleDependencyInjectionRadio.Services.Implementations
 {
     public class NickelCadmiumBattery : IBattery
     {
-        public void PowerOn()
+        public string PowerOn()
         {
-            Console.WriteLine("Nickel-Cadmium Battery is powering on the device.");
+            return("Nickel-Cadmium Battery is powering on the device.");
         }
 
-        public void PowerOff()
+        public string PowerOff()
         {
-            Console.WriteLine("Nickel-Cadmium Battery is powering off the device.");
+            return("Nickel-Cadmium Battery is powering off the device.");
         }
     }
 

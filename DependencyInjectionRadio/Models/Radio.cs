@@ -11,16 +11,14 @@ namespace ExempleDependencyInjectionRadio.Models
             _battery = battery ?? throw new ArgumentNullException(nameof(battery));
         }
 
-        public void TurnOn()
+        public string TurnOn()
         {
-            _battery.PowerOn();
-            Console.WriteLine("Radio is turned on.");
+            return _battery.PowerOn();
         }
 
-        public void TurnOff()
+        public string TurnOff()
         {
-            _battery.PowerOff();
-            Console.WriteLine("Radio is turned off.");
+            return _battery.PowerOff();
         }
     }
 

@@ -18,25 +18,28 @@ namespace ExempleDependencyInjectionRadio.Controllers
 
         public IActionResult Index()
         {
+            var listRadio = new List<Radio>();
+
             // Exemple d'utilisation avec une batterie Lithium
             var lithiumBattery = _batteryFactory.CreateBattery("Lithium");
             var radioWithLithium = new Radio(lithiumBattery);
-            radioWithLithium.TurnOn();
-            radioWithLithium.TurnOff();
-
+            
             // Exemple d'utilisation avec une batterie Nickel-Cadmium
             var nickelCadmiumBattery = _batteryFactory.CreateBattery("NickelCadmium");
             var radioWithNickelCadmium = new Radio(nickelCadmiumBattery);
-            radioWithNickelCadmium.TurnOn();
-            radioWithNickelCadmium.TurnOff();
-
+            
             // Exemple d'utilisation avec une batterie Alcaline
             var alkalineBattery = _batteryFactory.CreateBattery("Alkaline");
             var radioWithAlkaline = new Radio(alkalineBattery);
-            radioWithAlkaline.TurnOn();
-            radioWithAlkaline.TurnOff();
-            return View();
+           
+            listRadio.Add(radioWithLithium);
+            listRadio.Add(radioWithAlkaline);
+            listRadio.Add(radioWithNickelCadmium);
+
+            return View(listRadio);
         }
+
+        
 
         public IActionResult Privacy()
         {

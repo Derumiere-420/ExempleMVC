@@ -2,8 +2,8 @@
 {
     public interface IBattery
     {
-        void PowerOn();
-        void PowerOff();
+        String PowerOn();
+        String PowerOff();
     }
 
 }
