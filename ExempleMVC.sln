@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveToJsonFile", "S01_Demo_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneToMany", "OneToMany\OneToMany.csproj", "{2A3991BD-7F6B-4AA3-8AA6-4E7D81D080B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "I18N", "I18N\I18N.csproj", "{E6E54933-44AA-4113-8539-0C33F33CD395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N", "I18N\I18N.csproj", "{E6E54933-44AA-4113-8539-0C33F33CD395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionIoC_Console", "InjectionDependance_IoC\DependencyInjectionIoC_Console.csproj", "{32412511-70F1-48EC-B0D2-3C067F329121}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{E6E54933-44AA-4113-8539-0C33F33CD395}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6E54933-44AA-4113-8539-0C33F33CD395}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6E54933-44AA-4113-8539-0C33F33CD395}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32412511-70F1-48EC-B0D2-3C067F329121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32412511-70F1-48EC-B0D2-3C067F329121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32412511-70F1-48EC-B0D2-3C067F329121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32412511-70F1-48EC-B0D2-3C067F329121}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
