@@ -1,8 +1,10 @@
-﻿using ServiceBatteryFactory.Factories;
+﻿//Projet avec seulement la factory de Battery non Generic
+
+using ServiceBatteryFactory.Factories;
 using ServiceBatteryFactory.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-//Projet avec seulement la factory de Battery non Generic
+
 namespace ServiceBatteryFactory.Controllers
 {
     public class HomeController : Controller
