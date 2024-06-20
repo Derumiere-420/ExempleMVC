@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBatteryFactoryAndRad
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceFactoryBatteryGeneric", "ServiceGenericBatteryFactory\ServiceFactoryBatteryGeneric.csproj", "{1328CF2E-2387-4B04-A8CB-31B15DABEA06}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceFactoryRadioGenericAndFactoryBatteryGeneric", "ServiceFactoryRadioGenericAndFactoryBatteryGeneric\ServiceFactoryRadioGenericAndFactoryBatteryGeneric.csproj", "{3CBDE4AB-258B-4486-9572-25E1E8851CFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceGenericFactory", "ServiceFactoryRadioGenericAndFactoryBatteryGeneric\ServiceGenericFactory.csproj", "{3CBDE4AB-258B-4486-9572-25E1E8851CFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

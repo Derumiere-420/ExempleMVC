@@ -1,66 +1,56 @@
 ﻿//Projet Avec 2 factory Battery et Radio les 2 generic
-using ServiceBatteryAndRadioFactory.Factories;
-using ServiceBatteryAndRadioFactory.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using ServiceBatteryAndRadioFactory.Services.Interfaces;
-using ServiceBatteryAndRadioFactory.Services.Implementations.Radio;
+using ServiceBatteryAndRadioFactory.Models;
 using ServiceBatteryAndRadioFactory.Services.Implementations.Battery;
+using ServiceBatteryAndRadioFactory.Services.Implementations.Radio;
+using ServiceBatteryAndRadioFactory.Services.Interfaces;
+using ServiceFactoryRadioGenericAndFactoryBatteryGeneric.Factories;
+using System.Diagnostics;
 
 namespace ServiceBatteryAndRadioFactory.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IBatteryFactory<AlkalineBattery> _alkalineBatteryFactory;
-        private readonly IBatteryFactory<LithiumBattery> _lithiumBatteryFactory;
-        private readonly IBatteryFactory<NickelCadmiumBattery> _nickelCadmiumBatteryFactory;
-        private readonly IRadioFactory<LG> _lgRadio;
-        private readonly IRadioFactory<Sony> _sonyRadio;
-        private readonly IRadioFactory<Samsung> _samsungRadio;
+        private readonly IGenericFactory _genericFactory;
         private static readonly List<Radio> listRadio = new List<Radio>();
 
-        public HomeController(ILogger<HomeController> logger,
-       IBatteryFactory<AlkalineBattery> alkalineBatteryFactory,
-       IBatteryFactory<LithiumBattery> lithiumBatteryFactory,
-       IBatteryFactory<NickelCadmiumBattery> nickelCadmiumBatteryFactory,
-       IRadioFactory<LG> lgRadio,
-       IRadioFactory<Sony> sonyRadio,
-       IRadioFactory<Samsung> samsungRadio)
+        public HomeController(ILogger<HomeController> logger, IGenericFactory genericFactory)
         {
             _logger = logger;
-            _alkalineBatteryFactory = alkalineBatteryFactory;
-            _lithiumBatteryFactory = lithiumBatteryFactory;
-            _nickelCadmiumBatteryFactory = nickelCadmiumBatteryFactory;
-            _lgRadio = lgRadio;
-            _sonyRadio = sonyRadio;
-            _samsungRadio = samsungRadio;
+            _genericFactory = genericFactory;
 
             if (!listRadio.Any())
             {
                 InitializeRadios();
             }
-
         }
 
         private void InitializeRadios()
         {
-            // Exemple d'utilisation avec une batterie Lithium
-            var lithiumBattery = _lithiumBatteryFactory.CreateBattery();
-            var radioWithLithium = _lgRadio.CreateRadio(lithiumBattery);
+            var lithiumBattery = _genericFactory.Create<LithiumBattery>();
+            var radioWithLithium = _genericFactory.Create<LG>();
+            radioWithLithium.Battery = lithiumBattery;
+            radioWithLithium.RadioName = "LG";
+            radioWithLithium.IsRadioOn = false;
 
-            // Exemple d'utilisation avec une batterie Nickel-Cadmium
-            var nickelCadmiumBattery = _nickelCadmiumBatteryFactory.CreateBattery();
-            var radioWithNickelCadmium = _sonyRadio.CreateRadio(nickelCadmiumBattery);
+            var nickelCadmiumBattery = _genericFactory.Create<NickelCadmiumBattery>();
+            var radioWithNickelCadmium = _genericFactory.Create<Sony>();
+            radioWithNickelCadmium.Battery = nickelCadmiumBattery;
+            radioWithNickelCadmium.RadioName = "Sony";
+            radioWithNickelCadmium.IsRadioOn= false;
 
-            // Exemple d'utilisation avec une batterie Alcaline
-            var alkalineBattery = _alkalineBatteryFactory.CreateBattery();
-            var radioWithAlkaline = _samsungRadio.CreateRadio(alkalineBattery);
+            var alkalineBattery = _genericFactory.Create<AlkalineBattery>();
+            var radioWithAlkaline = _genericFactory.Create<Samsung>();
+            radioWithAlkaline.Battery = alkalineBattery;
+            radioWithAlkaline.RadioName = "Samsung";
+            radioWithAlkaline.IsRadioOn = false;
 
             listRadio.Add(radioWithLithium);
             listRadio.Add(radioWithAlkaline);
             listRadio.Add(radioWithNickelCadmium);
         }
+
 
         public IActionResult Index()
         {

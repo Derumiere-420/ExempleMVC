@@ -4,18 +4,15 @@ namespace ServiceBatteryAndRadioFactory.Services.Implementations.Radio
 {
     public class Radio : IRadio
     {
-        public Radio()
-        {
-            IsRadioOn = false;
-            RadioName = this.GetType().Name;
-        }
-        public IBattery _battery { get; set; }
+
         public bool IsRadioOn { get; set; }
         public string RadioName { get; set; }
+        public IBattery Battery { get; set; }
+
 
         public string BatteryType()
         {
-            return _battery.GetType().Name;
+            return Battery.GetType().Name;
         }
 
         public bool GetRadioStatus()
@@ -26,18 +23,16 @@ namespace ServiceBatteryAndRadioFactory.Services.Implementations.Radio
         public string TurnOff()
         {
             IsRadioOn = false;
-            return _battery.PowerOff();
+            return Battery.PowerOff();
         }
 
         public string TurnOn()
         {
             IsRadioOn = true;
-            return _battery.PowerOn();
+            return Battery.PowerOn();
         }
 
-        public virtual string SerialNumber()
-        {
-            return "Serial : ";
-        }
+
+
     }
 }

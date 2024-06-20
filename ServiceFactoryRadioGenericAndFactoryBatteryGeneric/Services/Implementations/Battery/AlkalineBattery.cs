@@ -12,12 +12,12 @@ namespace ServiceBatteryAndRadioFactory.Services.Implementations.Battery
         }
         public override string PowerOff()
         {
-            return $"{this.GetType().Name} Battery is at {Energy} and powering on .";
+            return $"{this.GetType().Name} Battery is at {Energy} and powering Off .";
         }
 
         public override string PowerOn()
         {
-            return $"{this.GetType().Name} Battery is at {Energy} powering Off.";
+            return $"{this.GetType().Name} Battery is at {Energy} powering On.";
         }
     }
 

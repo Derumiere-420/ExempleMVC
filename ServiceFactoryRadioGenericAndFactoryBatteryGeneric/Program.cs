@@ -1,20 +1,18 @@
-using ServiceBatteryAndRadioFactory.Factories;
-using ServiceBatteryAndRadioFactory.Models;
 using ServiceBatteryAndRadioFactory.Services.Implementations.Battery;
 using ServiceBatteryAndRadioFactory.Services.Implementations.Radio;
 using ServiceBatteryAndRadioFactory.Services.Interfaces;
+using ServiceFactoryRadioGenericAndFactoryBatteryGeneric.Factories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Nos injection de dépendances
-// Register battery implementations
+// Enregistrement des implémentations de Battery
 builder.Services.AddTransient<LithiumBattery>();
 builder.Services.AddTransient<NickelCadmiumBattery>();
 builder.Services.AddTransient<AlkalineBattery>();
 
 // Register the factories
-builder.Services.AddTransient(typeof(IBatteryFactory<>), typeof(BatteryFactory<>));
-builder.Services.AddTransient(typeof(IRadioFactory<>), typeof(RadioFactory<>));
+builder.Services.AddSingleton<IGenericFactory, GenericFactory>();
 
 // Register radio implementations
 builder.Services.AddTransient<Sony>();

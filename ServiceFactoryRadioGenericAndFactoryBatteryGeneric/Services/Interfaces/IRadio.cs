@@ -2,7 +2,7 @@
 {
     public interface IRadio
     {
-        IBattery _battery { get; set; }
+        IBattery Battery { get; set; }
         bool IsRadioOn { get; set; }
         string RadioName { get; set; }
         String TurnOn();

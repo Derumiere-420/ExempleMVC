@@ -4,7 +4,8 @@ namespace ServiceBatteryAndRadioFactory.Services.Implementations.Radio
 {
     public class Samsung : Radio
     {
-       
-       
+        //protected Samsung() : base()
+        //{
+        //}
     }
 }
