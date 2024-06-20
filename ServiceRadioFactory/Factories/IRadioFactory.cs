@@ -2,8 +2,8 @@
 
 namespace ServiceBatteryAndRadioFactory.Factories
 {
-    public interface IRadioFactory
+    public interface IRadioFactory<T> where T : IBattery
     {
-        IRadio CreateRadio(string type, IBattery battery);
+        T CreateRadio(IBattery battery);
     }
 }

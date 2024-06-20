@@ -4,7 +4,7 @@ using ServiceBatteryAndRadioFactory.Services.Interfaces;
 
 namespace ServiceBatteryAndRadioFactory.Factories
 {
-    public class RadioFactory : IRadioFactory
+    public class RadioFactory<T> : IRadioFactory<T> where T : IRadio
     {
         private readonly IServiceProvider _serviceProvider;
 
@@ -13,32 +13,11 @@ namespace ServiceBatteryAndRadioFactory.Factories
             _serviceProvider = serviceProvider;
 
         }
-        public IRadio CreateRadio(string type, IBattery battery)
+        public T CreateRadio(IBattery battery)
         {
-            IRadio radio;
-            switch (type)
-            {
-                case "Sony":
-                    radio = _serviceProvider.GetRequiredService<Sony>();
-                    radio._battery = battery;
-                    break;
-                case "Samsung":
-                    radio = _serviceProvider.GetRequiredService<Samsung>();
-                    radio._battery = battery;
-                    break;
-                case "LG":
-                    radio = _serviceProvider.GetRequiredService<LG>();
-                    radio._battery = battery;
-                    break;
-                default:
-                    radio = _serviceProvider.GetRequiredService<Sony>();
-                    radio._battery = battery;
-                    break;
-            }
-
-            return radio;
+            return _serviceProvider.GetRequiredService<T>();
         }
 
-       
+
     }
 }

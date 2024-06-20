@@ -13,8 +13,8 @@ builder.Services.AddTransient<NickelCadmiumBattery>();
 builder.Services.AddTransient<AlkalineBattery>();
 
 // Register the factories
-builder.Services.AddTransient<IBatteryFactory, BatteryFactory>();
-builder.Services.AddTransient<IRadioFactory, RadioFactory>();
+builder.Services.AddSingleton<IBatteryFactory, BatteryFactory>();
+builder.Services.AddSingleton<IRadioFactory, RadioFactory>();
 
 // Register radio implementations
 builder.Services.AddTransient<Sony>();
