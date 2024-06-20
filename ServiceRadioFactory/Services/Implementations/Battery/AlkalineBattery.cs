@@ -1,6 +1,6 @@
-﻿using ServiceRadioFactory.Services.Interfaces;
+﻿using ServiceBatteryAndRadioFactory.Services.Interfaces;
 
-namespace ServiceRadioFactory.Services.Implementations.Battery
+namespace ServiceBatteryAndRadioFactory.Services.Implementations.Battery
 {
     public class AlkalineBattery : IBattery
     {

@@ -1,6 +1,6 @@
-﻿using ServiceRadioFactory.Services.Interfaces;
+﻿using ServiceBatteryAndRadioFactory.Services.Interfaces;
 
-namespace ServiceRadioFactory.Services.Implementations
+namespace ServiceBatteryAndRadioFactory.Services.Implementations
 {
     public class NickelCadmiumBattery : IBattery
     {

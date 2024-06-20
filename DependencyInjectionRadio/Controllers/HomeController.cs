@@ -1,9 +1,9 @@
-﻿using ServiceRadioFactory.Factories;
-using ServiceRadioFactory.Models;
+﻿using ServiceBatteryAndRadioFactory.Factories;
+using ServiceBatteryAndRadioFactory.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ServiceRadioFactory.Controllers
+namespace ServiceBatteryAndRadioFactory.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,11 +1,11 @@
-﻿using ServiceRadioFactory.Factories;
-using ServiceRadioFactory.Models;
+﻿using ServiceBatteryAndRadioFactory.Factories;
+using ServiceBatteryAndRadioFactory.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using ServiceRadioFactory.Services.Interfaces;
-using ServiceRadioFactory.Services.Implementations.Radio;
+using ServiceBatteryAndRadioFactory.Services.Interfaces;
+using ServiceBatteryAndRadioFactory.Services.Implementations.Radio;
 
-namespace ServiceRadioFactory.Controllers
+namespace ServiceBatteryAndRadioFactory.Controllers
 {
     public class HomeController : Controller
     {

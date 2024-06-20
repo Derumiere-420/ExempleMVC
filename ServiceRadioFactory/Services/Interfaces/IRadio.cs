@@ -1,4 +1,4 @@
-﻿namespace ServiceRadioFactory.Services.Interfaces
+﻿namespace ServiceBatteryAndRadioFactory.Services.Interfaces
 {
     public interface IRadio
     {

@@ -1,8 +1,8 @@
-using ServiceRadioFactory.Factories;
-using ServiceRadioFactory.Models;
-using ServiceRadioFactory.Services.Implementations.Battery;
-using ServiceRadioFactory.Services.Implementations.Radio;
-using ServiceRadioFactory.Services.Interfaces;
+using ServiceBatteryAndRadioFactory.Factories;
+using ServiceBatteryAndRadioFactory.Models;
+using ServiceBatteryAndRadioFactory.Services.Implementations.Battery;
+using ServiceBatteryAndRadioFactory.Services.Implementations.Radio;
+using ServiceBatteryAndRadioFactory.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionIoC_Cons
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverPosting", "OverPosting\OverPosting.csproj", "{ED8409ED-2BC2-4EE1-8A69-FC77CC9EF110}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceRadioFactory", "ServiceRadioFactory\ServiceRadioFactory.csproj", "{15CFE3D8-377A-40DE-9B5E-E371B4C52309}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBatteryAndRadioFactory", "ServiceRadioFactory\ServiceBatteryAndRadioFactory.csproj", "{15CFE3D8-377A-40DE-9B5E-E371B4C52309}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
