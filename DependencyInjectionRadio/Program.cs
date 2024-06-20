@@ -1,7 +1,7 @@
-using ExempleDependencyInjectionRadio.Factories;
-using ExempleDependencyInjectionRadio.Models;
-using ExempleDependencyInjectionRadio.Services.Implementations;
-using ExempleDependencyInjectionRadio.Services.Interfaces;
+using ServiceBatteryFactory.Factories;
+using ServiceBatteryFactory.Models;
+using ServiceBatteryFactory.Services.Implementations;
+using ServiceBatteryFactory.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

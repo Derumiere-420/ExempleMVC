@@ -1,4 +1,4 @@
-namespace ExempleDependencyInjectionRadio.Models
+namespace ServiceBatteryFactory.Models
 {
     public class ErrorViewModel
     {

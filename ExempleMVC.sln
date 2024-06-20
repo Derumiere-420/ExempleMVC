@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManyToManyRelation", "ManyT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomUnobtrusiveDataValidator", "CustomUnobtrusiveDataValidator\CustomUnobtrusiveDataValidator.csproj", "{2291CE46-385E-4209-B408-29DD028E97F2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionRadio", "DependencyInjectionRadio\DependencyInjectionRadio.csproj", "{50CAB16F-E344-4CCF-9970-8685ED64A01A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBatteryFactory", "DependencyInjectionRadio\ServiceBatteryFactory.csproj", "{50CAB16F-E344-4CCF-9970-8685ED64A01A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveToJsonFile", "S01_Demo_CrazyBooks\SaveToJsonFile.csproj", "{DE488B3B-64B7-4034-A29E-5EA3BDF6002E}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N", "I18N\I18N.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionIoC_Console", "InjectionDependance_IoC\DependencyInjectionIoC_Console.csproj", "{32412511-70F1-48EC-B0D2-3C067F329121}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OverPosting", "OverPosting\OverPosting.csproj", "{ED8409ED-2BC2-4EE1-8A69-FC77CC9EF110}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverPosting", "OverPosting\OverPosting.csproj", "{ED8409ED-2BC2-4EE1-8A69-FC77CC9EF110}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

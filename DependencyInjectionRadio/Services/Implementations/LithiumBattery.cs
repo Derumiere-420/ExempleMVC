@@ -1,6 +1,6 @@
-﻿using ExempleDependencyInjectionRadio.Services.Interfaces;
+﻿using ServiceBatteryFactory.Services.Interfaces;
 
-namespace ExempleDependencyInjectionRadio.Services.Implementations
+namespace ServiceBatteryFactory.Services.Implementations
 {
     public class LithiumBattery : IBattery
     {

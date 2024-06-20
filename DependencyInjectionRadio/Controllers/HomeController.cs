@@ -1,9 +1,9 @@
-﻿using ExempleDependencyInjectionRadio.Factories;
-using ExempleDependencyInjectionRadio.Models;
+﻿using ServiceBatteryFactory.Factories;
+using ServiceBatteryFactory.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace ExempleDependencyInjectionRadio.Controllers
+namespace ServiceBatteryFactory.Controllers
 {
     public class HomeController : Controller
     {

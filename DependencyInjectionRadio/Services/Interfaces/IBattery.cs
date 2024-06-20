@@ -1,4 +1,4 @@
-﻿namespace ExempleDependencyInjectionRadio.Services.Interfaces
+﻿namespace ServiceBatteryFactory.Services.Interfaces
 {
     public interface IBattery
     {

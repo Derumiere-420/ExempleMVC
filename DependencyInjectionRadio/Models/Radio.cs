@@ -1,6 +1,6 @@
-﻿using ExempleDependencyInjectionRadio.Services.Interfaces;
+﻿using ServiceBatteryFactory.Services.Interfaces;
 
-namespace ExempleDependencyInjectionRadio.Models
+namespace ServiceBatteryFactory.Models
 {
     public class Radio
     {
