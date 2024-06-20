@@ -31,7 +31,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heritage et Interface", "He
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generique", "Generique\Generique.csproj", "{1869F48B-B5BF-450C-BD70-9B0FFF34097F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IReadOnlyList", "IReadOnlyList\IReadOnlyList.csproj", "{73DC2003-0173-45AD-8FE3-0D8613C20D37}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IReadOnlyList", "IReadOnlyList\IReadOnlyList.csproj", "{73DC2003-0173-45AD-8FE3-0D8613C20D37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pagination", "Pagination\Pagination.csproj", "{AD26272C-D540-4E2A-AD29-C661F2E180CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{73DC2003-0173-45AD-8FE3-0D8613C20D37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73DC2003-0173-45AD-8FE3-0D8613C20D37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73DC2003-0173-45AD-8FE3-0D8613C20D37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD26272C-D540-4E2A-AD29-C661F2E180CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD26272C-D540-4E2A-AD29-C661F2E180CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD26272C-D540-4E2A-AD29-C661F2E180CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD26272C-D540-4E2A-AD29-C661F2E180CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
