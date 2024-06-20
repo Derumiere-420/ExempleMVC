@@ -2,17 +2,9 @@
 
 namespace ServiceBatteryFactory.Services.Implementations
 {
-    public class NickelCadmiumBattery : IBattery
+    public class NickelCadmiumBattery : Battery
     {
-        public string PowerOn()
-        {
-            return("Nickel-Cadmium Battery is powering on.");
-        }
-
-        public string PowerOff()
-        {
-            return("Nickel-Cadmium Battery is powering off.");
-        }
+        
     }
 
 }

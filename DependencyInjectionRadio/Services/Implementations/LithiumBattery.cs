@@ -2,17 +2,9 @@
 
 namespace ServiceBatteryFactory.Services.Implementations
 {
-    public class LithiumBattery : IBattery
+    public class LithiumBattery : Battery
     {
-        public string PowerOn()
-        {
-            return("Lithium Battery is powering on.");
-        }
-
-        public string PowerOff()
-        {
-           return("Lithium Battery is powering off.");
-        }
+        
     }
 
 }
