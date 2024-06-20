@@ -6,12 +6,12 @@ namespace ServiceBatteryFactory.Services.Implementations.Battery
     {
         public virtual string PowerOff()
         {
-            return $"{this.GetType().Name} Battery is powering on.";
+            return $"{this.GetType().Name} Battery is powering On";
         }
 
         public virtual string PowerOn()
         {
-            return $"{this.GetType().Name} Battery is powering Off.";
+            return $"{this.GetType().Name} Battery is powering Off";
         }
     }
 }
