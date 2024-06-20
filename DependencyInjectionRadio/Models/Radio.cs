@@ -1,4 +1,4 @@
-﻿using ServiceBatteryFactory.Services.Interfaces;
+﻿using ServiceBatteryAndRadioFactory.Services.Interfaces;
 
 namespace ServiceBatteryFactory.Models
 {

@@ -3,7 +3,7 @@ using ServiceBatteryAndRadioFactory.Services.Interfaces;
 
 namespace ServiceBatteryAndRadioFactory.Factories
 {
-    public class BatteryFactory : IBatteryFactory
+    public class BatteryFactory<T> : IBatteryFactory<T> where T : IBattery
     {
         private readonly IServiceProvider _serviceProvider;
 
@@ -13,26 +13,9 @@ namespace ServiceBatteryAndRadioFactory.Factories
 
         }
 
-        public IBattery CreateBattery(string type)
+        public T CreateBattery()
         {
-            IBattery battery;
-            switch (type)
-            {
-                case "LithiumBattery":
-                    battery = _serviceProvider.GetRequiredService<LithiumBattery>();
-                    break;
-                case "NickelCadmiumBattery":
-                    battery = _serviceProvider.GetRequiredService<NickelCadmiumBattery>();
-                    break;
-                case "AlkalineBattery":
-                    battery = _serviceProvider.GetRequiredService<AlkalineBattery>();
-                    break;
-                default:
-                    battery = _serviceProvider.GetRequiredService<LithiumBattery>();
-                    break;
-            }
-
-            return battery;
+            return _serviceProvider.GetRequiredService<T>();
         }
 
     }
