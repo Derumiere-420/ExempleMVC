@@ -2,16 +2,22 @@
 
 namespace ServiceBatteryFactory.Services.Implementations
 {
-    public class AlkalineBattery : IBattery
+    public class AlkalineBattery : Battery
     {
-        public string PowerOn()
+        public int Power { get; set; }
+
+        public AlkalineBattery()
         {
-           return("Alkaline Battery is powering on.");
+            Power = 100;
+        }
+        public override string PowerOn()
+        {
+            return ($"{base.PowerOn()} power at {Power}");
         }
 
-        public string PowerOff()
+        public override string PowerOff()
         {
-            return("Alkaline Battery is powering off.");
+            return ($"{base.PowerOff()} power at {Power}");
         }
     }
 
