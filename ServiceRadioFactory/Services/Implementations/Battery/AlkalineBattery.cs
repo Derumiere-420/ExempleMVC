@@ -2,16 +2,22 @@
 
 namespace ServiceBatteryAndRadioFactory.Services.Implementations.Battery
 {
-    public class AlkalineBattery : IBattery
+    public class AlkalineBattery : Battery
     {
-        public string PowerOn()
+        public int Energy { get; set; }
+
+        public AlkalineBattery()
         {
-            return "Alkaline Battery is powering on.";
+            Energy = 100;
+        }
+        public override string PowerOff()
+        {
+            return $"{this.GetType().Name} Battery is at {Energy} and powering on .";
         }
 
-        public string PowerOff()
+        public override string PowerOn()
         {
-            return "Alkaline Battery is powering off.";
+            return $"{this.GetType().Name} Battery is at {Energy} powering Off.";
         }
     }
 
