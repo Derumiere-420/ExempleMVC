@@ -1,4 +1,4 @@
-﻿namespace ServiceBatteryAndRadioFactory.Services.Interfaces
+﻿namespace ServiceBatteryFactory.Services.Interfaces
 {
     public interface IBattery
     {

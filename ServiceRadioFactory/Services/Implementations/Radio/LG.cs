@@ -1,6 +1,6 @@
-﻿using ServiceBatteryAndRadioFactory.Services.Interfaces;
+﻿using ServiceBatteryFactory.Services.Interfaces;
 
-namespace ServiceBatteryAndRadioFactory.Services.Implementations.Radio
+namespace ServiceBatteryFactory.Services.Implementations.Radio
 {
     public class LG : Radio
     {

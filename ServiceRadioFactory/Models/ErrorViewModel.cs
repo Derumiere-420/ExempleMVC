@@ -1,4 +1,4 @@
-namespace ServiceBatteryAndRadioFactory.Models
+namespace ServiceBatteryFactory.Models
 {
     public class ErrorViewModel
     {

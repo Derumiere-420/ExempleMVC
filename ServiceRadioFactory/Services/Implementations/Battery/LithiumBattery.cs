@@ -1,6 +1,6 @@
-﻿using ServiceBatteryAndRadioFactory.Services.Interfaces;
+﻿using ServiceBatteryFactory.Services.Interfaces;
 
-namespace ServiceBatteryAndRadioFactory.Services.Implementations.Battery
+namespace ServiceBatteryFactory.Services.Implementations.Battery
 {
     public class LithiumBattery : Battery
     {

@@ -1,7 +1,7 @@
-﻿using ServiceBatteryAndRadioFactory.Services.Implementations;
-using ServiceBatteryAndRadioFactory.Services.Interfaces;
+﻿using ServiceBatteryFactory.Services.Implementations;
+using ServiceBatteryFactory.Services.Interfaces;
 
-namespace ServiceBatteryAndRadioFactory.Factories
+namespace ServiceBatteryFactory.Factories
 {
     public class BatteryFactory : IBatteryFactory
     {

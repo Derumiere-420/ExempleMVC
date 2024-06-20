@@ -1,6 +1,6 @@
-﻿using ServiceBatteryAndRadioFactory.Services.Interfaces;
+﻿using ServiceBatteryFactory.Services.Interfaces;
 
-namespace ServiceBatteryAndRadioFactory.Factories
+namespace ServiceBatteryFactory.Factories
 {
     public interface IRadioFactory
     {
