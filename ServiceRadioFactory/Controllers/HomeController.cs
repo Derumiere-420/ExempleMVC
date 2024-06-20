@@ -1,4 +1,5 @@
-﻿using ServiceBatteryFactory.Factories;
+﻿//Projet avec deux factory non generic Battery et Radio
+using ServiceBatteryFactory.Factories;
 using ServiceBatteryFactory.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
