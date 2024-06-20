@@ -10,12 +10,12 @@ namespace ServiceBatteryFactory.Services.Implementations.Battery
         {
             Power = 100;
         }
-        public override string PowerOff()
+        public override string PowerOn()
         {
             return ($"{base.PowerOn()} power at {Power}");
         }
 
-        public override string PowerOn()
+        public override string PowerOff()
         {
             return ($"{base.PowerOff()} power at {Power}");
         }

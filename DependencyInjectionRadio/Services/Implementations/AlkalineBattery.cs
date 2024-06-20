@@ -5,15 +5,19 @@ namespace ServiceBatteryFactory.Services.Implementations
     public class AlkalineBattery : Battery
     {
         public int Power { get; set; }
-        
+
+        public AlkalineBattery()
+        {
+            Power = 100;
+        }
         public override string PowerOn()
         {
-           return(base.PowerOn() + $" Power at {this.Power}");
+            return ($"{base.PowerOn()} power at {Power}");
         }
 
         public override string PowerOff()
         {
-            return (base.PowerOn() + $" Power at {this.Power}");
+            return ($"{base.PowerOff()} power at {Power}");
         }
     }
 
