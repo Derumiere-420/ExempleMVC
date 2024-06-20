@@ -1,0 +1,52 @@
+﻿@using ServiceBatteryFactory.Services.Implementations.Radio
+@model List<Radio>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio List</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+    <h1>List of Radios</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Marque du radio</th>
+                <th>Actions</th>
+        </thead>
+        <tbody>
+            @foreach (var radio in Model)
+            {
+                <tr>
+                    <td>@radio.RadioName</td>
+                    <td>
+                        @if (radio.IsRadioOn)
+                        {
+                            <form action="/Home/PowerOff" method="post">
+                                <input type="hidden" name="RadioName" value="@radio.RadioName" />
+                                <button type="submit">Power Off</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <form action="/Home/PowerOn" method="post">
+                                <input type="hidden" name="RadioName" value="@radio.RadioName" />
+                                <button type="submit">Power On</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if (TempData["PopupMessage"] != null)
+    {
+        <div class="popup-message">
+            @TempData["PopupMessage"]
+        </div>
+    }
+</body>
+</html>
