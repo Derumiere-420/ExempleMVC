@@ -13,11 +13,12 @@ namespace ServiceBatteryAndRadioFactory.Factories
             _serviceProvider = serviceProvider;
 
         }
+       
         public T CreateRadio(IBattery battery)
         {
-            return _serviceProvider.GetRequiredService<T>();
+            var radio = _serviceProvider.GetRequiredService<T>();
+            radio._battery = battery;
+            return radio;
         }
-
-
     }
 }
