@@ -29,22 +29,22 @@ namespace ServiceBatteryAndRadioFactory.Controllers
         private void InitializeRadios()
         {
             var lithiumBattery = _genericFactory.Create<LithiumBattery>();
-            var radioWithLithium = _genericFactory.Create<LG>();
-            radioWithLithium.Battery = lithiumBattery;
-            radioWithLithium.RadioName = "LG";
-            radioWithLithium.IsRadioOn = false;
+            var radioWithLithium = _genericFactory.Create<LG>(lithiumBattery);
+            //radioWithLithium.Battery = lithiumBattery;
+            //radioWithLithium.RadioName = "LG";
+            //radioWithLithium.IsRadioOn = false;
 
             var nickelCadmiumBattery = _genericFactory.Create<NickelCadmiumBattery>();
-            var radioWithNickelCadmium = _genericFactory.Create<Sony>();
-            radioWithNickelCadmium.Battery = nickelCadmiumBattery;
-            radioWithNickelCadmium.RadioName = "Sony";
-            radioWithNickelCadmium.IsRadioOn= false;
+            var radioWithNickelCadmium = _genericFactory.Create<Sony>(nickelCadmiumBattery);
+            //radioWithNickelCadmium.Battery = nickelCadmiumBattery;
+            //radioWithNickelCadmium.RadioName = "Sony";
+            //radioWithNickelCadmium.IsRadioOn= false;
 
             var alkalineBattery = _genericFactory.Create<AlkalineBattery>();
-            var radioWithAlkaline = _genericFactory.Create<Samsung>();
-            radioWithAlkaline.Battery = alkalineBattery;
-            radioWithAlkaline.RadioName = "Samsung";
-            radioWithAlkaline.IsRadioOn = false;
+            var radioWithAlkaline = _genericFactory.Create<Samsung>(alkalineBattery);
+            //radioWithAlkaline.Battery = alkalineBattery;
+            //radioWithAlkaline.RadioName = "Samsung";
+            //radioWithAlkaline.IsRadioOn = false;
 
             listRadio.Add(radioWithLithium);
             listRadio.Add(radioWithAlkaline);

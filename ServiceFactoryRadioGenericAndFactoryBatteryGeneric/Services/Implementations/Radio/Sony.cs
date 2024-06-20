@@ -4,8 +4,9 @@ namespace ServiceBatteryAndRadioFactory.Services.Implementations.Radio
 {
     public class Sony : Radio
     {
-        //protected Sony() : base()
-        //{
-        //}
+        public Sony() : base()
+        {
+            RadioName = this.GetType().Name;
+        }
     }
 }

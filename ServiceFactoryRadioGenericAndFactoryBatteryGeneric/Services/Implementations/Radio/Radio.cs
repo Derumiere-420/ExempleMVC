@@ -9,7 +9,15 @@ namespace ServiceBatteryAndRadioFactory.Services.Implementations.Radio
         public string RadioName { get; set; }
         public IBattery Battery { get; set; }
 
-
+        public Radio()
+        {
+            
+        }
+        public Radio(IBattery battery)
+        {
+            IsRadioOn = false;
+            Battery = battery;
+        }
         public string BatteryType()
         {
             return Battery.GetType().Name;
