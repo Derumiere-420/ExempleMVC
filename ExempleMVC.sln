@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverPosting", "OverPosting\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceBatteryAndRadioFactory", "ServiceRadioFactory\ServiceBatteryAndRadioFactory.csproj", "{15CFE3D8-377A-40DE-9B5E-E371B4C52309}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceGenericBatteryFactory", "ServiceGenericBatteryFactory\ServiceGenericBatteryFactory.csproj", "{1328CF2E-2387-4B04-A8CB-31B15DABEA06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{15CFE3D8-377A-40DE-9B5E-E371B4C52309}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15CFE3D8-377A-40DE-9B5E-E371B4C52309}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15CFE3D8-377A-40DE-9B5E-E371B4C52309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1328CF2E-2387-4B04-A8CB-31B15DABEA06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1328CF2E-2387-4B04-A8CB-31B15DABEA06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1328CF2E-2387-4B04-A8CB-31B15DABEA06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1328CF2E-2387-4B04-A8CB-31B15DABEA06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
