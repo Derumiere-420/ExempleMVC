@@ -2,9 +2,9 @@
 
 namespace ServiceBatteryFactory.Factories
 {
-    public interface IBatteryFactory
+    public interface IBatteryFactory<T> where T : IBattery
     {
-        IBattery CreateBattery(string type);
+        T CreateBattery();
     }
 
 }

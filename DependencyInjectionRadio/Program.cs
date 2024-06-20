@@ -9,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddTransient<LithiumBattery>();
 builder.Services.AddTransient<NickelCadmiumBattery>();
 builder.Services.AddTransient<AlkalineBattery>();
-builder.Services.AddSingleton<IBatteryFactory, BatteryFactory>();
+//injection du service pour la factory
+builder.Services.AddTransient(typeof(IBatteryFactory<>), typeof(BatteryFactory<>));
+
 
 
 

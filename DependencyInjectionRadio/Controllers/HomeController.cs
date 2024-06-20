@@ -2,19 +2,27 @@
 using ServiceBatteryFactory.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using ServiceBatteryFactory.Services.Implementations;
 
 namespace ServiceBatteryFactory.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IBatteryFactory _batteryFactory;
+        private readonly IBatteryFactory<AlkalineBattery> _alkalineBatteryFactory;
+        private readonly IBatteryFactory<LithiumBattery> _lithiumBatteryFactory;
+        private readonly IBatteryFactory<NickelCadmiumBattery> _nickelCadmiumBatteryFactory;
         private static readonly List<Radio> listRadio = new List<Radio>();
 
-        public HomeController(ILogger<HomeController> logger, IBatteryFactory batteryFactory)
+        public HomeController(ILogger<HomeController> logger, 
+            IBatteryFactory<AlkalineBattery> alkalineBatteryFactory,
+            IBatteryFactory<LithiumBattery> lithiumBatteryFactory,
+            IBatteryFactory<NickelCadmiumBattery> nickelCadmiumBatteryFactory)
         {
             _logger = logger;
-            _batteryFactory = batteryFactory;
+            _alkalineBatteryFactory = alkalineBatteryFactory;
+            _lithiumBatteryFactory = lithiumBatteryFactory;
+            _nickelCadmiumBatteryFactory = nickelCadmiumBatteryFactory;
 
             if (!listRadio.Any())
             {
@@ -26,15 +34,15 @@ namespace ServiceBatteryFactory.Controllers
         private void InitializeRadios()
         {
             // Exemple d'utilisation avec une batterie Lithium
-            var lithiumBattery = _batteryFactory.CreateBattery("LithiumBattery");
+            var lithiumBattery = _lithiumBatteryFactory.CreateBattery();
             var radioWithLithium = new Radio(lithiumBattery, "Sony");
 
             // Exemple d'utilisation avec une batterie Nickel-Cadmium
-            var nickelCadmiumBattery = _batteryFactory.CreateBattery("NickelCadmiumBattery");
+            var nickelCadmiumBattery = _nickelCadmiumBatteryFactory.CreateBattery();
             var radioWithNickelCadmium = new Radio(nickelCadmiumBattery, "Samsung");
 
             // Exemple d'utilisation avec une batterie Alcaline
-            var alkalineBattery = _batteryFactory.CreateBattery("AlkalineBattery");
+            var alkalineBattery = _alkalineBatteryFactory.CreateBattery();
             var radioWithAlkaline = new Radio(alkalineBattery, "LG");
 
             listRadio.Add(radioWithLithium);
