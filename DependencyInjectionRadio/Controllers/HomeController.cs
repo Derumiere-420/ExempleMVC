@@ -1,4 +1,5 @@
-﻿using ServiceBatteryFactory.Factories;
+﻿//Pojet avec une factory de Battery Generic
+using ServiceBatteryFactory.Factories;
 using ServiceBatteryFactory.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
