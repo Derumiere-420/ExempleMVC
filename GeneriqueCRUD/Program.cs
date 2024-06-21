@@ -1,6 +1,8 @@
 ﻿using GeneriqueCRUD.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using System.Globalization;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MyDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbContext") ?? throw new InvalidOperationException("Connection string 'MyDbContext' not found.")));
@@ -9,6 +11,12 @@ builder.Services.AddDbContext<MyDbContext>(options =>
 builder.Services.AddScoped(typeof(IService<>), typeof(Service<>));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var cultureInfo = new CultureInfo("en-US");
+cultureInfo.NumberFormat.CurrencyDecimalSeparator = ".";
+cultureInfo.NumberFormat.NumberDecimalSeparator = ".";
+CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
+CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
 
 var app = builder.Build();
 
