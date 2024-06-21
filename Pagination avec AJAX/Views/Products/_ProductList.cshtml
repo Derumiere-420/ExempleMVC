@@ -74,32 +74,3 @@
     }
 </div>
 
-<!-- Section Scripts pour inclure les scripts spécifiques à cette vue -->
-@section Scripts {
-    <script>
-        $(document).ready(function () {
-            // Charger la première page au démarrage
-            loadPage(1);
-
-            // Gérer les clics sur les liens de pagination
-            $(document).on('click', '.page-link', function (e) {
-                e.preventDefault();
-                var page = $(this).data('page');
-                loadPage(page);
-            });
-
-            function loadPage(pageNumber) {
-                $.ajax({
-                    url: '@Url.Action("GetProducts", "Products")',
-                    data: { pageNumber: pageNumber },
-                    success: function (data) {
-                        $('#product-list').html(data);
-                    },
-                    error: function () {
-                        alert("An error occurred while loading the page.");
-                    }
-                });
-            }
-        });
-    </script>
-}
