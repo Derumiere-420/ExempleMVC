@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using GeneriqueCRUD.Models;
 using GeneriqueCRUD.Services;
+using System.Globalization;
 
 namespace GeneriqueCRUD.Controllers
 {
@@ -85,6 +86,9 @@ namespace GeneriqueCRUD.Controllers
 
             if (ModelState.IsValid)
             {
+
+              
+
                 await _productService.UpdateAsync(product);
                 return RedirectToAction(nameof(Index));
             }

@@ -44,7 +44,7 @@ namespace GeneriqueCRUD.Services
 
         public async Task<bool> IsExistsAsync(int id)
         {
-            return await _context.Product.AnyAsync(e => e.Id == id);
+            return await _dbSet.FindAsync(id) != null;
         }
     }
 }

@@ -32,8 +32,8 @@ namespace GeneriqueCRUD.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -44,61 +44,61 @@ namespace GeneriqueCRUD.Migrations
                         {
                             Id = 1,
                             Name = "Hammer",
-                            Price = 12.99m
+                            Price = 12
                         },
                         new
                         {
                             Id = 2,
                             Name = "Screwdriver",
-                            Price = 8.99m
+                            Price = 8
                         },
                         new
                         {
                             Id = 3,
                             Name = "Wrench",
-                            Price = 15.50m
+                            Price = 15
                         },
                         new
                         {
                             Id = 4,
                             Name = "Pliers",
-                            Price = 7.99m
+                            Price = 7
                         },
                         new
                         {
                             Id = 5,
                             Name = "Saw",
-                            Price = 22.00m
+                            Price = 22
                         },
                         new
                         {
                             Id = 6,
                             Name = "Drill",
-                            Price = 45.99m
+                            Price = 45
                         },
                         new
                         {
                             Id = 7,
                             Name = "Tape Measure",
-                            Price = 5.49m
+                            Price = 5
                         },
                         new
                         {
                             Id = 8,
                             Name = "Level",
-                            Price = 9.99m
+                            Price = 9
                         },
                         new
                         {
                             Id = 9,
                             Name = "Chisel",
-                            Price = 6.75m
+                            Price = 6
                         },
                         new
                         {
                             Id = 10,
                             Name = "Allen Wrench Set",
-                            Price = 12.00m
+                            Price = 12
                         });
                 });
 
