@@ -14,12 +14,12 @@ namespace GeneriqueCRUD.Controllers
     public class ProductsController : Controller
     {
         private readonly IService<Product> _serviceCRUD;
-        //private readonly MyDbContext _dbContext;
+       
 
         public ProductsController(IService<Product> serviceCRUD/*, MyDbContext dbContext*/)
         {
             _serviceCRUD = serviceCRUD;
-        //    _dbContext = dbContext;
+           
         }
 
         // GET: Products
