@@ -13,26 +13,26 @@ namespace GeneriqueCRUD.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly IService<Product> _productService;
-        private readonly MyDbContext _dbContext;
+        private readonly IService<Product> _serviceCRUD;
+        //private readonly MyDbContext _dbContext;
 
-        public ProductsController(IService<Product> productService, MyDbContext dbContext)
+        public ProductsController(IService<Product> serviceCRUD/*, MyDbContext dbContext*/)
         {
-            _productService = productService;
-            _dbContext = dbContext;
+            _serviceCRUD = serviceCRUD;
+        //    _dbContext = dbContext;
         }
 
         // GET: Products
         public async Task<IActionResult> Index()
         {
-            var products = await _productService.GetAllAsync();
+            var products = await _serviceCRUD.GetAllAsync();
             return View(products);
         }
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int id)
         {
-            var product = await _productService.GetByIdAsync(id);
+            var product = await _serviceCRUD.GetByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace GeneriqueCRUD.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _productService.AddAsync(product);
+                await _serviceCRUD.AddAsync(product);
                 return RedirectToAction(nameof(Index));
             }
             return View(product);
@@ -64,7 +64,7 @@ namespace GeneriqueCRUD.Controllers
             // GET: Products/Edit/5
             public async Task<IActionResult> Edit(int id)
         {
-            var product = await _productService.GetByIdAsync(id);
+            var product = await _serviceCRUD.GetByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -89,7 +89,7 @@ namespace GeneriqueCRUD.Controllers
 
               
 
-                await _productService.UpdateAsync(product);
+                await _serviceCRUD.UpdateAsync(product);
                 return RedirectToAction(nameof(Index));
             }
             return View(product);
@@ -98,7 +98,7 @@ namespace GeneriqueCRUD.Controllers
         // GET: Products/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
-            var product = await _productService.GetByIdAsync(id);
+            var product = await _serviceCRUD.GetByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
@@ -111,13 +111,13 @@ namespace GeneriqueCRUD.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            await _productService.DeleteAsync(id);
+            await _serviceCRUD.DeleteAsync(id);
             return RedirectToAction(nameof(Index));
         }
 
         private async Task<bool> ProductExists(int id)
         {
-          return await _productService.IsExistsAsync(id);
+          return await _serviceCRUD.IsExistsAsync(id);
         }
     }
 }
