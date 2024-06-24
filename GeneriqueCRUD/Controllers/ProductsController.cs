@@ -14,12 +14,12 @@ namespace GeneriqueCRUD.Controllers
     public class ProductsController : Controller
     {
         private readonly IService<Product> _serviceCRUD;
-       
+
 
         public ProductsController(IService<Product> serviceCRUD/*, MyDbContext dbContext*/)
         {
             _serviceCRUD = serviceCRUD;
-           
+
         }
 
         // GET: Products
@@ -61,8 +61,8 @@ namespace GeneriqueCRUD.Controllers
             return View(product);
         }
 
-            // GET: Products/Edit/5
-            public async Task<IActionResult> Edit(int id)
+        // GET: Products/Edit/5
+        public async Task<IActionResult> Edit(int id)
         {
             var product = await _serviceCRUD.GetByIdAsync(id);
             if (product == null)
@@ -86,9 +86,6 @@ namespace GeneriqueCRUD.Controllers
 
             if (ModelState.IsValid)
             {
-
-              
-
                 await _serviceCRUD.UpdateAsync(product);
                 return RedirectToAction(nameof(Index));
             }
@@ -117,7 +114,7 @@ namespace GeneriqueCRUD.Controllers
 
         private async Task<bool> ProductExists(int id)
         {
-          return await _serviceCRUD.IsExistsAsync(id);
+            return await _serviceCRUD.IsExistsAsync(id);
         }
     }
 }
