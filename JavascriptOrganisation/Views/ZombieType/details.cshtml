@@ -1,0 +1,23 @@
+﻿@model ZombieTypeVM
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Type: @Model.ZombieType.TypeName</h1>
+<h3>Nombre de zombies: @Model.ZombiesCount</h3>
+<h3>Moyenne des points: @Model.PointsAverage</h3>
+<div class="row">
+    @*  POUR CHAQUE ZOMBIE:*@
+    @foreach (var item in Model.ZombiesList)
+    {
+        <partial name="_ZombieCard" model="item" />
+    }
+</div>
+@* SI AUCUN ZOMBIE ASSOCIÉ*@
+@if (Model.ZombiesList.Count == 0)
+{
+    <div class="alert alert-danger">No associated zombie for this type</div>
+}
+<div>
+    <a class="btn btn-secondary" asp-action="Index"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;Back to List</a>
+</div>

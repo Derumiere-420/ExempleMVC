@@ -1,0 +1,100 @@
+﻿@model ZombieVM
+@{
+    ViewData["Title"] = @Locals["Title"];
+}
+<h1>Edit</h1>
+<h4>Zombie</h4>
+<hr />
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div class="row px-2 mx-2 backgroundWhite border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="col-9">
+            <div class="form-group row">
+                <input asp-for="@Model.Zombie.Id" class="form-control" hidden />
+                <input asp-for="@Model.OldImage" value="@Model.Zombie.Image" class="form-control" hidden />
+                <div class="col-4">
+                    <label asp-for="@Model.Zombie.Name" class="control-label"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="@Model.Zombie.Name" class="form-control" />
+                    <span asp-validation-for="@Model.Zombie.Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="@Model.Zombie.ShortDesc" class="col-form-label"></label>
+                </div>
+                <div class="col-8">
+                    <textarea asp-for="@Model.Zombie.ShortDesc" class="form-control summernote" style="height:300px;"></textarea>
+                    <span asp-validation-for="@Model.Zombie.ShortDesc" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="@Model.Zombie.Image" class="col-form-label"></label>
+                </div>
+                <div class="col-8">
+                    <input type="file" name="files" onchange="this.nextElementSibling.style.display = 'none'" class="form-control border-0 shadow" multiple  />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="@Model.Zombie.Point" class="control-label"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="@Model.Zombie.Point" class="form-control" />
+                    <span asp-validation-for="@Model.Zombie.Point" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="@Model.Zombie.Force" class="control-label"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="@Model.Zombie.Force" class="form-control" />
+                    <span asp-validation-for="@Model.Zombie.Force" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="@Model.Zombie.ZombieTypeId" class="control-label"></label>
+                </div>
+                <div class="col-8">
+                    <select class="form-control form-select" asp-for="@Model.Zombie.ZombieTypeId" asp-items="@Model.ZombieTypeSelectList">
+                        <option disabled selected>--Select Zombie Type--</option>
+                    </select>
+                    <span asp-validation-for="@Model.Zombie.ZombieTypeId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row form-group">
+                <div class="col-8 offset-4 row">
+                    <div class="col">
+                        <button type="submit" value="Edit" class="btn btn-info w-100" asp-route-Id="@Model.Zombie.Id"><i class="fa-solid fa-pen-to-square"></i>&nbsp;@Locals["Edit"]</button>
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-secondary w-100" asp-action="Index"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;@Locals["BackToList"]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <img style="border-radius:5px; border:1px solid #bbb9b9;width:85%" class="img-fluid" src="\@AppConstants.ImagePathZombies@(string.IsNullOrWhiteSpace(Model.Zombie.Image) ? AppConstants.ImageGeneric : Model.Zombie.Image)" />
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () { $('.summernote').summernote(); });
+    </script>
+ }
+

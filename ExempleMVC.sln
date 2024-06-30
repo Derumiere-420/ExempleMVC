@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceFactoryBatteryGeneri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceFactoryRadioGenericAndFactoryBatteryGeneric", "ServiceFactoryRadioGenericAndFactoryBatteryGeneric\ServiceFactoryRadioGenericAndFactoryBatteryGeneric.csproj", "{3CBDE4AB-258B-4486-9572-25E1E8851CFE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavascriptOrganisation", "JavascriptOrganisation\JavascriptOrganisation.csproj", "{3CB549B8-5D01-4FAA-902A-996ACBA97FE1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{3CBDE4AB-258B-4486-9572-25E1E8851CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CBDE4AB-258B-4486-9572-25E1E8851CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CBDE4AB-258B-4486-9572-25E1E8851CFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CB549B8-5D01-4FAA-902A-996ACBA97FE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CB549B8-5D01-4FAA-902A-996ACBA97FE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CB549B8-5D01-4FAA-902A-996ACBA97FE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CB549B8-5D01-4FAA-902A-996ACBA97FE1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

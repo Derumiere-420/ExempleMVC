@@ -1,0 +1,22 @@
+﻿@if (TempData[AppConstants.Success] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options = {
+            "positionClass": "toast-bottom-center"
+        }
+        toastr.success('@TempData[AppConstants.Success]');
+    </script>
+}
+@if (TempData[AppConstants.Error] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options = {
+            "positionClass": "toast-bottom-center"
+        }
+        toastr.error('@TempData[AppConstants.Error]');
+    </script>
+}

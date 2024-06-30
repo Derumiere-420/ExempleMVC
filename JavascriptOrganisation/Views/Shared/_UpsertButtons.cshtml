@@ -1,0 +1,15 @@
+﻿@model int
+<div class="col-6">
+    @if (Model == 0)
+    {
+        <button type="submit" value="Create" class="btn btn-success w-100"><i class="fas fa-plus-square"></i>&nbsp; @Locals["Create"]</button>
+                    
+    }
+    else
+    {
+        <button type="submit" value="Edit" class="btn btn-info w-100"><i class="fa-solid fa-pen-to-square"></i>&nbsp;@Locals["Edit"]</button>
+    }
+</div>
+<div class="col-6">
+    <a asp-action="Index" class="btn btn-secondary w-100"><i class="fa-solid fa-circle-arrow-left"></i>&nbsp;@Locals["BackToList"]</a>
+</div>

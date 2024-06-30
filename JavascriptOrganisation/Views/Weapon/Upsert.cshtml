@@ -1,0 +1,74 @@
+﻿@model ZombieParty.Models.Weapon
+@{
+    ViewData["Title"] = ViewBag.Title;
+}
+<h1>
+@if (Model.WeaponId != 0)
+{
+        @Locals["TitleEdit"]
+        ;
+    }
+else
+{
+        @Locals["TitleNew"]
+        ;
+    }
+ </h1>
+<hr />
+<div class="row">
+    <div class="col-md-6 bg-white shadow ">
+        <form asp-action="Upsert">
+            <input asp-for="WeaponId" class="form-control" hidden />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control summernote"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Force" class="control-label"></label>
+                <input asp-for="Force" class="form-control" />
+                <span asp-validation-for="Force" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedDate" class="control-label"></label>
+                <input asp-for="CreatedDate" class="form-control" />
+                <span asp-validation-for="CreatedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Qty" class="control-label"></label>
+                <input asp-for="Qty" class="form-control" />
+                <span asp-validation-for="Qty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtyBought" class="control-label"></label>
+                <input asp-for="QtyBought" class="form-control" />
+                <span asp-validation-for="QtyBought" class="text-danger"></span>
+            </div>
+            <div class="form-group py-2">
+            <div class="col-12 row">
+            <partial name="_UpsertButtons" model="@Model.WeaponId">
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
