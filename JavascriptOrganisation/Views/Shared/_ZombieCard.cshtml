@@ -1,0 +1,38 @@
+﻿@model Zombie
+
+
+
+
+
+
+
+
+<div class="col-lg-4 col-md-6 pb-4">
+    <div class="card border-primary rounded shadow-sm" style="background: url('/images/imagesLayout/fond.png');">
+        <div class="card-body px-3 pt-3 pb-1 row">
+            <div class="Favorite position-absolute">
+                <a class="Favorite FavoriteBtn @(Model.IsFavorite ? "text-primary": "text-dark")" data-zombieid="@Model.Id"><i class="fa-solid fa-heart-circle-plus"></i></a>
+            </div>
+            <p class="card-title text-center text-warning h5"><b>@Model.Name</b></p>
+        </div>
+        <img class="card-img-top img-fluid d-block mx-auto mb-3" src="@AppConstants.ImagePathViewsZombies@(string.IsNullOrWhiteSpace(Model.Image) ? AppConstants.ImageGeneric : Model.Image)" alt="Zombie photo" style="width:85%">
+        <div class="card-body p-1 px-3 row">
+            <div class="col-6" style="padding-left:25px;">
+                <span class="badge p-2 border w-100 btn-dark">@Model.ZombieType?.TypeName</span>
+            </div>
+            <div class="col-6" style="padding-left:3px;padding-right:25px;">
+                <span class="badge p-2 border w-100 btn-primary">@Model.Force</span>
+            </div>
+            <div style="padding-left:25px;">
+                <p class="text-white">Points: <span><b class="">@Model.Point</b></span></p>
+            </div>
+        </div>
+        <a class="p-2 border w-100 btn btn-warning px-3 detailBtn" data-id="@Model.Id">
+            <i class="fa-solid fa-pen-to-square"></i>&nbsp;@Locals["Details"]
+        </a>
+        <a class="p-2 border w-100 btn btn-info px-3" asp-controller="Zombie" asp-action="Edit" asp-route-Id="@Model.Id">
+            <i class="fa-solid fa-pen-to-square"></i>&nbsp;@Locals["Edit"]
+        </a>
+        <hr />
+    </div>
+</div>

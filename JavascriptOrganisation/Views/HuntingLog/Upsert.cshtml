@@ -1,0 +1,63 @@
+﻿@model ZombieParty.Models.HuntingLog
+@{
+    ViewData["Title"] = ViewBag.Title;
+}
+<h1>
+@if (Model.Id != 0)
+{
+        ViewData["Title"] = @Locals["TitleEdit"];
+    }
+else
+{
+        ViewData["Title"] = @Locals["TitleNew"];
+    }
+</h1>
+
+<h4>Huting Log</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6 bg-white shadow ">
+        <form asp-action="Upsert">
+            <input asp-for="Id" class="form-control" hidden />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-12">
+                    
+            <div class="form-group row">
+               <div class="col-4">
+                <label asp-for="Title" class="control-label"></label>
+               </div>
+               <div class="col-8">
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+               </div>
+            </div>
+
+            <div class="form-group row">
+               <div class="col-4">
+                <label asp-for="Description" class="control-label"></label>
+               </div>
+               <div class="col-8">
+                <textarea asp-for="Description" class="form-control summernote"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+               </div>
+            </div>
+            
+            <div class="form-group row py-2">
+                        <div class="col-8 offset-4 row">
+                        <partial name="_UpsertButtons" model="@Model.Id">
+                </div>
+            </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <script>  
+        $(document).ready(function () {$('.summernote').summernote(); });
+    </script>
+}
+

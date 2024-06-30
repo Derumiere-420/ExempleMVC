@@ -1,0 +1,89 @@
+﻿@model IEnumerable<ZombieParty.Models.Weapon>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>@Locals["Title"]</h1>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('tr').hover(function(){
+                $(this).toggleClass("highlight");
+            });
+        });
+    </script>
+}
+
+
+<p>
+    <a class="btn btn-success" asp-action="Upsert"><i class="fas fa-plus-square"></i>&nbsp;@Locals["New"]</a>
+</p>
+<table class="table bg-white shadow ">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Force)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtyBought)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Force)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Image)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Qty)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QtyBought)
+                </td>
+                <td>
+                    <a class="btn btn-info" asp-action="Upsert" asp-route-Id="@item.WeaponId"><i class="fa-solid fa-pen-to-square"></i> &nbsp;@Locals["Edit"]</a>
+                    @*<a class="btn btn-warning" asp-action="Details" asp-route-WeaponId="@item.WeaponId"><i class="fa-solid fa-circle-info"></i> &nbsp;@Locals["Details"]</a>
+                <a class="btn btn-danger" asp-action="Delete" asp-route-WeaponId="@item.WeaponId"><i class="fa-solid fa-trash-can"></i> &nbsp;@Locals["Delete"]</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
