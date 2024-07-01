@@ -78,21 +78,15 @@
 //}());
 
 
-// jQuery Event Handling
-
-$(document).ready(function () {
+//jQuery Event Handling
+//add remove favoris
     $(".FavoriteBtn").on("click", function (evt) {
-        let formData = new FormData();
         let lien = $(this);
         let zombieid = $(this).attr("data-zombieid")
         let url = "Zombie/Favorite/" + zombieid
         $.ajax({
             type: 'GET',
             url: url,
-            contentType: false,
-            processData: false,
-            cache: false,
-            data: formData,
             success: function (response) {
                 let isFavorite = JSON.parse(response)
                 if (isFavorite) {
@@ -111,8 +105,8 @@ $(document).ready(function () {
     });
 
 
+//Show detail of zombie
     $(".detailBtn").click(function () {
-        debugger
         let $buttonClicked = $(this);
         let id = $buttonClicked.attr('data-id');
 
@@ -125,7 +119,7 @@ $(document).ready(function () {
             alert("Impossible d'obtenir l'information à propos de ce zombie.");
         });
     });
-});
+
 
 
 

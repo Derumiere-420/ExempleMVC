@@ -5,7 +5,7 @@
     // Gérer les clics sur les liens de pagination
     $(document).on('click', '.page-link', function (e) {
         e.preventDefault();
-        var page = $(this).data('page');
+        var page = $(this).attr('data-page');
         loadPage(page);
     });
 
