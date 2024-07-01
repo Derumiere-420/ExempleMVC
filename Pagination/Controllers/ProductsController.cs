@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -20,18 +21,13 @@ namespace Pagination.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int pageNumber = 1, int pageSize = 10)
         {
             // La vue principale
-            return View();
-        }
-
-        public async Task<IActionResult> GetProducts(int pageNumber = 1, int pageSize = 10)
-        {
             var pagedResult = await _context.Product
-                                            .AsNoTracking()
-                                            .OrderBy(p => p.Name)
-                                            .GetPagedAsync(pageNumber, pageSize);
+                                   .AsNoTracking()
+                                    .OrderBy(p => p.Name)
+                                    .GetPagedAsync(pageNumber, pageSize);
 
             int totalPages = pagedResult.TotalPages;
             int maxPagesToShow = 5;
@@ -47,8 +43,10 @@ namespace Pagination.Controllers
             ViewBag.EndPage = endPage;
             ViewBag.PageNumber = pageNumber;
 
-            return PartialView("_ProductList", pagedResult);
+            return View(pagedResult);
         }
+
+       
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)

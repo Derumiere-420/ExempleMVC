@@ -19,15 +19,25 @@ public class MyDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<Product>().HasData(
-            new Product { Id = 1, Name = "Product 1", Price = 10.0m },
-            new Product { Id = 2, Name = "Product 2", Price = 20.0m }
-        );
 
-        for (int i = 3; i <= 500; i++)
+        string myString = "";
+        for (int i = 1; i <= 500; i++)
         {
+            if (i < 10)
+            {
+                myString = "Product 00" + i;
+            }
+            else if (i >= 10 && i < 100)
+            {
+                myString = "Product 0" + i;
+            }
+            else
+            {
+                myString = "Product " + i;
+            }
+           
             modelBuilder.Entity<Product>().HasData(
-                new Product { Id = i, Name = $"Product {i}", Price = i * 5.0m }
+                new Product { Id = i, Name = myString, Price = i * 5.0m }
             );
         }
     }
