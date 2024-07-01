@@ -37,9 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pagination", "Pagination\Pa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaginationAjax", "Pagination avec AJAX\PaginationAjax.csproj", "{BFB5DFFE-679E-46FA-B09E-9BD57EBA3231}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneriqueCRUD", "GeneriqueCRUD\GeneriqueCRUD.csproj", "{2F49443A-AF93-480C-BBFD-C85B3F552DA3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneriqueCRUD", "GeneriqueCRUD\GeneriqueCRUD.csproj", "{2F49443A-AF93-480C-BBFD-C85B3F552DA3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavascriptOrganisation", "JavascriptOrganisation\JavascriptOrganisation.csproj", "{8548B1BC-8DE5-4BEE-B810-CD006251D06C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AjaxFavoris", "JavascriptOrganisation\AjaxFavoris.csproj", "{8548B1BC-8DE5-4BEE-B810-CD006251D06C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
