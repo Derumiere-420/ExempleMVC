@@ -1,0 +1,31 @@
+﻿@model List<Produit>
+
+@{
+    ViewBag.Title = "Produits";
+}
+
+<h2>Produits</h2>
+
+<form id="filterForm" method="get" action="@Url.Action("Filtre", "Produits")">
+    <div>
+        <label>Nom:</label>
+        <input type="text" name="nom" value="@ViewBag.Nom" />
+    </div>
+    <div>
+        <label>Cout:</label>
+        <input type="number" name="cout" value="@ViewBag.Cout" step="0.01" />
+    </div>
+    <div>
+        <label>Categorie:</label>
+        <input type="text" name="categorie" value="@ViewBag.Categorie" />
+    </div>
+    <div>
+        <button type="submit">Filtrer</button>
+    </div>
+</form>
+
+<div id="results">
+    @Html.Partial("_ProduitList", Model)
+</div>
+
+
