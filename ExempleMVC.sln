@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneToMany", "OneToMany\OneT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "I18N", "I18N\I18N.csproj", "{E6E54933-44AA-4113-8539-0C33F33CD395}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionIoC_Console", "InjectionDependance_IoC\DependencyInjectionIoC_Console.csproj", "{32412511-70F1-48EC-B0D2-3C067F329121}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionIoC", "InjectionDependance_IoC\DependencyInjectionIoC.csproj", "{32412511-70F1-48EC-B0D2-3C067F329121}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OverPosting", "OverPosting\OverPosting.csproj", "{ED8409ED-2BC2-4EE1-8A69-FC77CC9EF110}"
 EndProject
